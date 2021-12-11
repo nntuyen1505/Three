@@ -1,0 +1,192 @@
+// css button, title, icon, elements...
+img {
+    display: block;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.control-btn {
+    width: max-content;
+    height: max-content;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid #00e558;
+    padding: 20px 25px;
+    @include maxW(1340px) {
+        background: #00e558;
+    }
+    @include xs {
+        padding: 10px;
+    }
+    img {
+        width: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &:before,
+    &:after {
+        position: absolute;
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: #290a59;
+        @include transition($t);
+    }
+    &:before {
+        top: -2px;
+        left: 0;
+    }
+    &:after {
+        bottom: -2px;
+        right: 0;
+    }
+    &:hover {
+        @include transition($t);
+        border-right: 2px solid #290a59;
+        border-left: 2px solid #290a59;
+        background: #00e558;
+        &:before,
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+.control-btn.left {
+    margin-bottom: 20px;
+    img {
+        transform: rotate(180deg);
+    }
+}
+
+.container.flex {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    .project__left {
+        @include text(4rem, "mb", 1, #290a59, uppercase);
+        letter-spacing: 16px;
+        padding: 0 50px;
+        position: relative;
+        p {
+            font-size: 8rem;
+            font-family: "plf";
+            letter-spacing: normal;
+        }
+        &:before {
+            position: absolute;
+            content: '';
+            width: 2px;
+            height: 100%;
+            background-color: #00e558;
+            top: 0;
+            left: 0;
+        }
+    }
+    .project__right {
+        @include text(1.6rem, "ml", 1.5, #8e859e, normal);
+        padding-left: 90px;
+    }
+    @include maxW(1024px) {
+        .project__right {
+            padding-left: initial;
+        }
+    }
+    @include sm {
+        display: flex;
+        align-items: initial;
+        justify-content: initial;
+        flex-direction: column;
+        text-align: center;
+        .project__right {
+            padding-left: initial;
+            line-height: 1.5;
+            padding-top: 30px;
+        }
+    }
+    @include xs {
+        .project__left {
+            font-size: 3.5rem;
+            p {
+                font-size: 7rem;
+            }
+        }
+    }
+    @include xxs {
+        .project__left {
+            font-size: 3rem;
+            letter-spacing: 10px;
+            p {
+                font-size: 6rem;
+            }
+        }
+    }
+    @include maxW(420px) {
+        .project__left {
+            font-size: 3rem;
+            letter-spacing: 7px;
+            p {
+                font-size: 5rem;
+            }
+        }
+    }
+    @include maxW(350px) {
+        .project__left {
+            font-size: 3rem;
+            letter-spacing: 7px;
+            p {
+                font-size: 4rem;
+            }
+        }
+    }
+}
+
+.content {
+    width: 80%;
+    height: 80%;
+    @include mid;
+    z-index: 90;
+    &::before {
+        position: absolute;
+        content: '';
+        border-top: 2px solid #00e558;
+        border-bottom: 2px solid #00e558;
+        width: 100%;
+        height: 100%;
+        transform: scaleX(0);
+        @include transition(0.6s);
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        border-left: 2px solid #00e558;
+        border-right: 2px solid #00e558;
+        width: 100%;
+        height: 100%;
+        transform: scaleY(0);
+        @include transition(0.6s);
+    }
+    &__text {
+        text-align: center;
+        @include mid;
+        display: flex;
+        flex-direction: column;
+        z-index: 90;
+        &-website {
+            @include text(2rem, "mb", normal, #00e558, uppercase);
+            letter-spacing: 4px;
+            @include visible(0);
+            transition-delay: 0.4s;
+            transform: translateY(-100%);
+            @include transition($t);
+        }
+        &-title {
+            @include text(4rem, "plf", normal, #fff, uppercase);
+            @include visible(0);
+            transition-delay: 0.4s;
+            transform: translateY(100%);
+            @include transition($t);
+        }
+    }
+}

@@ -1,0 +1,775 @@
+ // CSS HOMEPAGE
+ .mainwrapper {
+     background: #e9ecef;
+     .backround__header {
+         position: relative;
+         width: 100%;
+         //  height: 100vh;
+         .imgbackground {
+             display: block;
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+             overflow: hidden;
+         }
+         .videobackground {
+             display: none;
+             position: absolute;
+             top: 0px;
+             left: 0px;
+             width: 100%;
+             height: 100%;
+             overflow: hidden;
+             pointer-events: none;
+             video {
+                 @include mid;
+             }
+         }
+         &-text {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             h1 {
+                 @include text(8rem, "mb", normal, #fff, uppercase);
+                 letter-spacing: 30px;
+                 @include sm {
+                     letter-spacing: 20px;
+                 }
+                 @include xs {
+                     font-size: 5rem;
+                     letter-spacing: 15px;
+                 }
+                 @include xxs {
+                     font-size: 3rem;
+                     letter-spacing: 10px;
+                 }
+             }
+         }
+         @include sm {
+             height: 80vh;
+         }
+         @include xs {
+             height: 70vh;
+         }
+         @include xxs {
+             height: 50vh;
+         }
+     }
+     .aarhus {
+         padding-top: 150px;
+         position: relative;
+         .container {
+             display: flex;
+             align-items: center;
+             .text {
+                 width: 50%;
+                 height: 720px;
+                 background: #fff;
+                 position: relative;
+                 .control {
+                     position: absolute;
+                     top: 50%;
+                     transform: translateY(-50%);
+                     left: -120px;
+                     @include maxW(1340px) {
+                         position: absolute;
+                         bottom: 0;
+                         right: calc((79px*2)*-1);
+                         top: initial;
+                         transform: initial;
+                         left: initial;
+                         display: flex;
+                         z-index: 90;
+                         .control-btn.left {
+                             margin-bottom: initial;
+                         }
+                     }
+                 }
+                 .ct {
+                     display: none;
+                     // padding: 100px 110px;
+                     @include mid;
+                     .title {
+                         @include text(4rem, "plf", 1, #290a59, uppercase);
+                     }
+                     .website {
+                         @include text(2rem, "mb", 1, #00e558, uppercase);
+                         letter-spacing: 4px;
+                         padding: 30px 0;
+                     }
+                     .txt {
+                         &-1 {
+                             margin-bottom: 30px;
+                         }
+                         p {
+                             @include text(1.6rem, "ml", 1.5, #6d6081, normal);
+                         }
+                     }
+                     .control-btn {
+                         cursor: pointer;
+                         margin-top: 40px;
+                         @include text(1.3rem, "mb", 1, #290a59, uppercase);
+                         text-align: center;
+                         letter-spacing: 4px;
+                         display: inline-block;
+                         padding: 20px;
+                     }
+                     &.active {
+                         display: block;
+                     }
+                 }
+             }
+             .img {
+                 width: 50%;
+                 position: absolute;
+                 top: 50%;
+                 transform: translateY(-50%);
+                 right: 0;
+                 .carousel {
+                     width: 100%;
+                     height: 720px;
+                     overflow: hidden;
+                     position: relative;
+                     img {
+                         @include midimg(100%);
+                     }
+                 }
+             }
+         }
+         @include sm {
+             padding-top: 90px;
+             .container {
+                 display: flex;
+                 flex-direction: column;
+                 align-items: center;
+                 flex-direction: column-reverse;
+                 .text {
+                     width: 100%;
+                     height: 420px;
+                     background: #fff;
+                     position: relative;
+                     .ct {
+                         padding: 30px;
+                         text-align: center;
+                         display: none;
+                         top: initial;
+                         left: initial;
+                         transform: initial;
+                         position: initial;
+                         .txt-1 {
+                             margin-bottom: 15px;
+                         }
+                     }
+                     .control {
+                         position: initial;
+                         top: initial;
+                         right: initial;
+                         transform: initial;
+                         left: initial;
+                         display: flex;
+                         position: absolute;
+                         top: -69px;
+                         left: 0;
+                         z-index: 90;
+                     }
+                 }
+                 .img {
+                     width: 100%;
+                     // height: 420px;
+                     position: initial;
+                     top: initial;
+                     transform: initial;
+                     right: initial;
+                     .carousel {
+                         width: 100%;
+                         height: 420px;
+                     }
+                 }
+             }
+         }
+         @include xs {
+             .container {
+                 .text {
+                     .control {
+                         top: -49px;
+                         left: 0;
+                     }
+                     .ct {
+                         .title {
+                             font-size: 3.5rem;
+                         }
+                     }
+                 }
+             }
+         }
+         @include xxs {
+             .container {
+                 .text {
+                     height: 380px;
+                     .ct {
+                         .title {
+                             font-size: 3rem;
+                         }
+                         .txt {
+                             &-1 {
+                                 display: none;
+                             }
+                         }
+                     }
+                 }
+                 .img {
+                     .carousel {
+                         height: 380px;
+                     }
+                 }
+             }
+         }
+         @include maxW(320px) {
+             .container {
+                 .text {
+                     height: 420px;
+                 }
+             }
+         }
+     }
+     .project {
+         .project__grid {
+             display: grid;
+             grid-template-columns: repeat(3, 1fr);
+             grid-auto-rows: 420px;
+             &-item {
+                 width: 100%;
+                 height: 100%;
+                 position: relative;
+                 overflow: hidden;
+                 cursor: pointer;
+                 img {
+                     @include midimg(100%);
+                     @include transform(translate(-50%, -50%) scale(1));
+                     @include transition($t);
+                 }
+                 .content {
+                     width: 80%;
+                     height: 80%;
+                     @include mid;
+                     z-index: 90;
+                     &::before {
+                         position: absolute;
+                         content: '';
+                         border-top: 2px solid #00e558;
+                         border-bottom: 2px solid #00e558;
+                         width: 100%;
+                         height: 100%;
+                         transform: scaleX(0);
+                         @include transition(0.6s);
+                     }
+                     &::after {
+                         position: absolute;
+                         content: '';
+                         border-left: 2px solid #00e558;
+                         border-right: 2px solid #00e558;
+                         width: 100%;
+                         height: 100%;
+                         transform: scaleY(0);
+                         @include transition(0.6s);
+                     }
+                     &__text {
+                         text-align: center;
+                         @include mid;
+                         display: flex;
+                         flex-direction: column;
+                         z-index: 90;
+                         &-website {
+                             @include text(2rem, "mb", normal, #00e558, uppercase);
+                             letter-spacing: 4px;
+                             @include visible(0);
+                             transition-delay: 0.4s;
+                             transform: translateY(-100%);
+                             @include transition($t);
+                         }
+                         &-title {
+                             @include text(4rem, "plf", normal, #fff, uppercase);
+                             @include visible(0);
+                             transition-delay: 0.4s;
+                             transform: translateY(100%);
+                             @include transition($t);
+                         }
+                         @include xxs {
+                             &-website {
+                                 font-size: 2rem;
+                             }
+                             &-title {
+                                 font-size: 3rem;
+                             }
+                         }
+                         @include maxW(480px) {
+                             &-website {
+                                 font-size: 1.5rem;
+                             }
+                             &-title {
+                                 font-size: 2.5rem;
+                             }
+                         }
+                     }
+                 }
+                 &:before {
+                     @include transition($t);
+                     position: absolute;
+                     content: '';
+                     width: 100%;
+                     height: 100%;
+                     background: transparent;
+                     z-index: 10;
+                 }
+                 &:hover {
+                     img {
+                         @include transform(translate(-50%, -50%) scale(1.3));
+                         @include transition($t);
+                     }
+                     &::before {
+                         background: #290a59a3;
+                     }
+                     .content {
+                         &::before {
+                             transform: scaleX(1);
+                             @include transition(0.6s);
+                         }
+                         &::after {
+                             transform: scaleY(1);
+                             @include transition(0.6s);
+                         }
+                         &__text {
+                             &-website {
+                                 @include visible(1);
+                                 transition-delay: 0.4s;
+                                 transform: translateY(0);
+                             }
+                             &-title {
+                                 @include visible(1);
+                                 transition-delay: 0.4s;
+                                 transform: translateY(0);
+                             }
+                         }
+                     }
+                 }
+             }
+         }
+         @include sm {
+             .project__grid {
+                 display: grid;
+                 grid-template-columns: repeat(2, 1fr);
+                 grid-auto-rows: 350px;
+             }
+         }
+         @include xxs {
+             .project__grid {
+                 grid-auto-rows: 245px;
+             }
+         }
+         @include maxW(500px) {
+             .project__grid {
+                 grid-auto-rows: 210px;
+             }
+         }
+         @include maxW(400px) {
+             .project__grid {
+                 grid-auto-rows: 180px;
+             }
+         }
+         @include maxW(375px) {
+             .project__grid {
+                 grid-auto-rows: 170px;
+             }
+         }
+     }
+     .about {
+         position: relative;
+         .container {
+             display: flex;
+             .img {
+                 width: 50%;
+                 position: absolute;
+                 left: 0;
+                 .carousel {
+                     width: 100%;
+                     height: 720px;
+                     overflow: hidden;
+                     position: relative;
+                     img {
+                         @include midimg(100%);
+                     }
+                 }
+             }
+             .text {
+                 position: relative;
+                 width: 50%;
+                 height: 720px;
+                 background: #fff;
+                 margin-left: auto;
+                 margin-right: 0;
+                 .control-btn {
+                     cursor: pointer;
+                     @include text(1.3rem, "mb", 1, #290a59, uppercase);
+                     text-align: center;
+                     letter-spacing: 4px;
+                     display: inline-block;
+                     padding: 20px;
+                     max-height: max-content;
+                     max-width: max-content;
+                     position: absolute;
+                     top: 50%;
+                     right: -30%;
+                     transform: translateY(-50%) rotate(-90deg);
+                     @include maxW(1340px) {
+                         top: initial;
+                         right: initial;
+                         transform: initial;
+                         bottom: 0;
+                         left: calc((80px*2)*-1);
+                     }
+                 }
+                 .ct {
+                     // padding: 100px 120px;
+                     @include mid;
+                     h3 {
+                         @include text(1.3rem, "mb", 2.4rem, #290a59, uppercase);
+                         letter-spacing: 4px;
+                     }
+                     p {
+                         @include text(1.6rem, "ml", 2.4rem, #948aa3, normal);
+                     }
+                     .pdb {
+                         padding-bottom: 60px;
+                     }
+                 }
+             }
+         }
+         @include sm {
+             .container {
+                 display: flex;
+                 flex-direction: column;
+                 .text {
+                     width: 100%;
+                     height: 420px;
+                     position: initial;
+                     left: initial;
+                     position: relative;
+                     .control-btn {
+                         transform: initial;
+                         position: absolute;
+                         top: -57px;
+                         left: 0;
+                     }
+                     .ct {
+                         top: initial;
+                         left: initial;
+                         transform: initial;
+                         position: initial;
+                         padding: 30px;
+                     }
+                 }
+                 .img {
+                     width: 100%;
+                     position: initial;
+                     left: initial;
+                     .carousel {
+                         width: 100%;
+                         height: 420px;
+                     }
+                 }
+             }
+         }
+         @include xxs {
+             .container {
+                 .img {
+                     .carousel {
+                         height: 380px;
+                     }
+                 }
+                 .text {
+                     height: 375px;
+                     .control-btn {
+                         top: -54px;
+                     }
+                     .ct {
+                         .pdb {
+                             padding-bottom: 30px;
+                         }
+                     }
+                 }
+             }
+         }
+         @include maxW(400px) {
+             .container {
+                 .text {
+                     height: 415px;
+                 }
+             }
+         }
+     }
+     .meet {
+         .meet__slider {
+             .container {
+                 position: relative;
+                 .meet__slider-list {
+                     .item {
+                         width: 368px;
+                         height: 368px;
+                         position: relative;
+                         overflow: hidden;
+                         cursor: pointer;
+                         // margin: 0 2px;
+                         @include maxW(320px) {
+                             width: 300px;
+                             height: 300px;
+                         }
+                         >img {
+                             @include midimg(100%);
+                             @include transform(translate(-50%, -50%) scale(1));
+                             @include transition($t);
+                         }
+                         .content {
+                             &__text {
+                                 &-website {
+                                     letter-spacing: 14px !important;
+                                 }
+                                 &-title {
+                                     transition-delay: 0.6s;
+                                     transform: initial !important;
+                                     @include transition($t);
+                                 }
+                                 &-icon {
+                                     @include visible(0);
+                                     transition-delay: 0.4s;
+                                     transform: translateY(-100%);
+                                     @include transition($t);
+                                     padding-top: 30px;
+                                     ul {
+                                         display: flex;
+                                         align-items: center;
+                                         justify-content: center;
+                                         // gap: 15px;
+                                         li {
+                                             padding: 0 15px;
+                                             a {
+                                                 img {
+                                                     width: 18px;
+                                                 }
+                                             }
+                                         }
+                                     }
+                                 }
+                             }
+                         }
+                         &:before {
+                             @include transition($t);
+                             position: absolute;
+                             content: '';
+                             width: 100%;
+                             height: 100%;
+                             background: transparent;
+                             z-index: 10;
+                         }
+                         &:hover {
+                             img {
+                                 @include transform(translate(-50%, -50%) scale(1.3));
+                                 @include transition($t);
+                             }
+                             &::before {
+                                 background: #004019ba;
+                             }
+                             .content {
+                                 &::before {
+                                     transform: scaleX(1);
+                                     @include transition(0.6s);
+                                 }
+                                 &::after {
+                                     transform: scaleY(1);
+                                     @include transition(0.6s);
+                                 }
+                                 &__text {
+                                     &-website {
+                                         @include visible(1);
+                                         transition-delay: 0.4s;
+                                         transform: translateY(0);
+                                     }
+                                     &-title {
+                                         @include visible(1);
+                                         transition-delay: 0.6s;
+                                         transform: translateY(0);
+                                     }
+                                     &-icon {
+                                         @include visible(1);
+                                         transition-delay: 0.4s;
+                                         transform: translateY(0);
+                                     }
+                                 }
+                             }
+                         }
+                     }
+                 }
+                 .control {
+                     position: absolute;
+                     top: 50%;
+                     transform: translateY(-50%);
+                     right: -10%;
+                     @include maxW(1340px) {
+                         position: initial;
+                         top: initial;
+                         transform: initial;
+                         right: initial;
+                         display: flex;
+                         .control-btn.left {
+                             margin-bottom: initial;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+     .aarhus.local {
+         padding-top: initial !important;
+         .container {
+             .text {
+                 &__box {
+                     @include mid;
+                     padding: 100px 110px;
+                     .title {
+                         @include text(4rem, "plf", 1, #290a59, uppercase);
+                     }
+                     .txt {
+                         padding: 30px 0;
+                         @include text(1.6rem, "ml", 1.5, #6d6081, normal);
+                     }
+                     ul {
+                         li {
+                             padding-bottom: 35px;
+                             p:nth-child(1) {
+                                 @include text(1.3rem, "mb", 2.4rem, #290a59, uppercase);
+                                 letter-spacing: 5px;
+                                 text-decoration: none;
+                             }
+                             p:nth-child(2) {
+                                 @include text(1.6rem, "ml", 2.4rem, #6d6081, normal !important);
+                             }
+                         }
+                     }
+                     .control-btn {
+                         @include text(1.3rem, 'mb', 1, #290a59, uppercase);
+                         text-align: center;
+                         margin-top: initial !important;
+                     }
+                 }
+             }
+             .img {
+                 top: initial !important;
+                 transform: initial !important;
+                 .carousel {
+                     iframe {
+                         @include midimg(100%);
+                     }
+                     &:before {
+                         position: absolute;
+                         content: '';
+                         background: #0040197d;
+                         width: 100%;
+                         height: 100%;
+                         z-index: 9;
+                         pointer-events: none;
+                     }
+                     ul {
+                         position: absolute;
+                         bottom: 100px;
+                         left: 100px;
+                         z-index: 90;
+                         li {
+                             @include text(1.6rem, "ml", 2.4rem, #fff, normal);
+                         }
+                         li:nth-child(1) {
+                             font-weight: bold;
+                         }
+                     }
+                 }
+             }
+         }
+         @include sm {
+             .container {
+                 .text {
+                     text-align: center;
+                     &__box {
+                         top: initial;
+                         left: initial;
+                         transform: initial;
+                         position: initial;
+                         padding: 30px;
+                         .txt {
+                             padding: 10px 0;
+                         }
+                         ul {
+                             padding-bottom: 20px;
+                             li {
+                                 padding-bottom: 10px;
+                             }
+                         }
+                         .control-btn {
+                             display: inline-block;
+                         }
+                     }
+                 }
+             }
+         }
+         @include xs {
+             .container {
+                 .text {
+                     &__box {
+                         .title {
+                             font-size: 3.5rem;
+                         }
+                         .control-btn {
+                             padding: 20px !important;
+                         }
+                     }
+                 }
+             }
+         }
+         @include xxs {
+             .container {
+                 .text {
+                     &__box {
+                         .title {
+                             font-size: 3rem;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+     .totop {
+         display: none;
+         position: fixed;
+         bottom: 50px;
+         right: 50px;
+         z-index: 100;
+         .control-btn {
+             background: #00e558;
+             padding: 20px;
+         }
+         &.active {
+             display: block;
+         }
+         @include sm {
+             bottom: 20px;
+             right: 20px;
+             .control-btn {
+                 padding: 10px;
+             }
+         }
+     }
+ }
+ 
+ body {
+     &.active {
+         overflow: hidden;
+     }
+ }

@@ -1,0 +1,41 @@
+// css navigator (Menu)
+nav {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    transition: $t;
+    transform: translateX(-100%);
+    .container {
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            gap: 30px;
+            @include mid;
+            li {
+                a {
+                    @include text(3rem, 'mb', normal, #fff, uppercase);
+                    text-decoration: none;
+                    &:hover {
+                        color: #00e558;
+                    }
+                }
+            }
+        }
+    }
+    &.active {
+        transition: $t;
+        transform: translateX(0);
+    }
+    @include xs {
+        display: block;
+    }
+}
